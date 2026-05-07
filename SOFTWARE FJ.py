@@ -28,7 +28,6 @@ class ReservaInvalidaError(ErrorGestionSoftware):
 class DatosClienteError(ErrorGestionSoftware):
     """Se lanza cuando los datos del cliente son incorrectos."""
     pass
-
 # =========================================================
 # CLASES DEL SISTEMA
 # =========================================================
@@ -62,7 +61,9 @@ class Cliente(EntidadBase):
     def nombre(self):
         return self.__nombre
 
-# --- POLIMORFISMO Y HERENCIA EN SERVICIOS ---
+# =========================================================
+# POLIMORFISMO Y HERENCIA EN SERVICIOS
+# =========================================================
 
 class Servicio(ABC):
     """Clase abstracta Servicio."""
@@ -101,4 +102,5 @@ class AsesoriaEspecializada(Servicio):
         return (self.costo_base * horas) * 1.10
 
     def describir(self):
+        return f"Servicio: Asesoría Técnica - {self.nombre_servicio}"
         return f"Servicio: Asesoría Técnica - {self.nombre_servicio}"
